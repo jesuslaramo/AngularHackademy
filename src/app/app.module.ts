@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PortalComponent } from './portal/portal.component';
 import { PanelModule } from './panel/panel.module';
+import { PortalModule } from './portal/portal.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PortalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PanelModule
+    PanelModule,
+    PortalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
