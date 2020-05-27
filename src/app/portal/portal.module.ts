@@ -6,6 +6,7 @@ import { PortalComponent } from './portal.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { UsComponent } from './components/us/us.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { UsComponent } from './components/us/us.component';
     PortalComponent,
     NavbarComponent,
     FooterComponent,
+    HomeComponent,
     UsComponent,
   ],
   imports: [
