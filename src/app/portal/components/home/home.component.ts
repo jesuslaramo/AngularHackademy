@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { imagesArray } from './images';
 
 
 @Component({
@@ -8,8 +7,7 @@ import { imagesArray } from './images';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-    images: any = imagesArray;
+    
 
     constructor() { }
 
