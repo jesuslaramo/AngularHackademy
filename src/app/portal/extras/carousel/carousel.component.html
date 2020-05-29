@@ -1,3 +1,6 @@
+<section *ngIf="images?.length == 0" class="d-flex justify-content-center align-items-center">
+    <h1 class="font-weight-bold text-white">Hola bienvenido a Hackademy</h1>
+</section>
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" *ngIf="images?.length != 0">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="i" *ngFor="let item of images; let i = index" [ngClass]="{active: i == 0}"></li>
