@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PanelModule } from './panel/panel.module';
 import { PortalModule } from './portal/portal.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PortalModule } from './portal/portal.module';
     BrowserModule,
     AppRoutingModule,
     PanelModule,
-    PortalModule
+    PortalModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
