@@ -5,13 +5,12 @@
         </div>
         <ul class="list-unstyled components">
             <p>Bienvenidos</p>
-            <li><a href="#">Dashboard</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/panel">Dashboard</a></li>
+            <li routerLinkActive="active"><a routerLink="/panel/profile">Perfil</a></li>
             <li>
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li><a href="#">Home 1</a></li>
-                    <li><a href="#">Home 2</a></li>
-                    <li><a href="#">Home 3</a></li>
+                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Usuarios</a>
+                <ul class="collapse list-unstyled" id="userSubmenu">
+                    <li routerLinkActive="active"><a routerLink="/panel/users">Ver usuarios</a></li>
                 </ul>
             </li>
         </ul>
@@ -21,7 +20,6 @@
             <div class="container-fluid">
                 <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="toggleSidebar()">
                     <i class="fas fa-align-left"></i>
-                    <span> Toggle Sidebar</span>
                 </button>
             </div>
         </nav>
