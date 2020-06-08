@@ -4,6 +4,7 @@ import { PanelComponent } from './panel.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
       { path: '', component: DashboardComponent},
       { path: 'profile', component: ProfileComponent},
       { path: 'users', component: UsersComponent},
-      { path: 'users/:id', component: UsersComponent}
+      { path: 'user/detail/:id', component: UserDetailComponent}
     ]
   }
 ];

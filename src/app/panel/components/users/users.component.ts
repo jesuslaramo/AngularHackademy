@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { UserService } from '../../services/user.service';
+
+declare var $: any;
 
 @Component({
     selector: 'app-users',
@@ -8,20 +10,29 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
 
-    id: any;
+    usersList: any;
+    user: any;
 
-    constructor(private router: Router, private route: ActivatedRoute) { }
+    constructor(private userService: UserService) { }
 
     ngOnInit(): void {
-        this.id = this.route.snapshot.paramMap.get('id');
-
-        if(this.id === '1'){
-            this.router.navigateByUrl('/panel');
-        }
+        this.getUsers();
     }
-
-    goToProfile(){
-        this.router.navigateByUrl('/panel/profile');
+    
+    getUsers(){
+        this.userService.getUsers().subscribe(res => {
+            this.usersList = res;
+        }, error => {
+            console.error(error);
+        });
+    }
+    
+    getUser(id){
+        this.userService.getUser(id).subscribe(res => {
+            this.user = res;
+        }, error => {
+            console.error(error);
+        })
     }
 
 }
