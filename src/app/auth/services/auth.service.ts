@@ -5,18 +5,13 @@ import { environment } from 'src/environments/environment';
 @Injectable({
     providedIn: 'root'
 })
-export class UserService {
+export class AuthService {
 
-    apiUrl: string = environment.apiUrl;
+    apiUrl: string = environment.apiUrlAuth;
 
     constructor(private http: HttpClient) { }
 
-    getUsers(){
-        return this.http.get(`${this.apiUrl}users`);
+    login(body){
+        return this.http.post(`${this.apiUrl}login`, body);
     }
-
-    getUser(id){
-        return this.http.get(`${this.apiUrl}users/${id}`);
-    }
-
 }

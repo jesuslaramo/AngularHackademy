@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var $: any;
 
@@ -9,7 +10,7 @@ declare var $: any;
 })
 export class PanelComponent implements OnInit {
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit(): void {
     }
@@ -21,4 +22,9 @@ export class PanelComponent implements OnInit {
             })
         });
     }
+
+    logout(){
+        localStorage.removeItem('token');
+        this.router.navigateByUrl('/auth');
+    }   
 }
