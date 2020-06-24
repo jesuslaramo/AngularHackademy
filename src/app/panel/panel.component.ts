@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/services/auth.service';
 
 declare var $: any;
 
@@ -10,7 +11,7 @@ declare var $: any;
 })
 export class PanelComponent implements OnInit {
 
-    constructor(private router: Router) { }
+    constructor(private authService: AuthService) { }
 
     ngOnInit(): void {
     }
@@ -24,7 +25,6 @@ export class PanelComponent implements OnInit {
     }
 
     logout(){
-        localStorage.removeItem('token');
-        this.router.navigateByUrl('/auth');
-    }   
+        this.authService.logout();
+    }
 }
